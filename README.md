@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is part of The Odin Project's Ruby on Rails curriculum. You can read more about it [here](https://www.theodinproject.com/lessons/ruby-on-rails-private-events). Basically, this is a private event planning app along the lines of something like [Eventbrite](https://www.eventbrite.com/).
