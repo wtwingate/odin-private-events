@@ -1,5 +1,7 @@
 <h1>Hey there, <%= @user.first_name %>!</h1>
 
+<%= link_to "Create new event", new_event_path %>
+
 <h2>Created Events</h2>
 
 <% if @user.created_events.any? %>
