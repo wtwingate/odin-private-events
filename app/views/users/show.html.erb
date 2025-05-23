@@ -2,7 +2,7 @@
 
 <%= link_to "Create new event", new_event_path %>
 
-<h2>Created Events</h2>
+<h2>Events You've Created</h2>
 
 <% if @user.created_events.any? %>
   <ul>
@@ -14,4 +14,18 @@
   </ul>
 <% else %>
   <p>You haven't created any events yet.</p>
+<% end %>
+
+<h2>Events You're Attending</h2>
+
+<% if @user.attended_events.any? %>
+  <ul>
+    <% @user.attended_events.each do |attended_event| %>
+      <li>
+        <%= link_to attended_event.name, attended_event %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You aren't attending any events yet.</p>
 <% end %>
