@@ -7,7 +7,7 @@ class AttendancesController < ApplicationController
     if @attendance.save
       flash[:notice] = "You have successfully registered for the event."
     else
-      flash[:alert] = "There was an error registering for the event."
+      flash[:alert] = @attendance.errors.full_messages.to_sentence
     end
 
     redirect_to @attendance.event
