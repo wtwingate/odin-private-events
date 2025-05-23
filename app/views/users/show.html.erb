@@ -2,30 +2,30 @@
 
 <%= link_to "Create new event", new_event_path %>
 
-<h2>Events You've Created</h2>
+<h2>Upcoming Events</h2>
 
-<% if @user.created_events.any? %>
-  <ul>
-    <% @user.created_events.each do |created_event| %>
-      <li>
-        <%= link_to created_event.name, created_event %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>You haven't created any events yet.</p>
+<% hosting_events = @user.created_events.where(date: Date.today..) %>
+<% if hosting_events.any? %>
+  <h3>Hosting</h3>
+  <%= render "event_list", events: hosting_events %>
 <% end %>
 
-<h2>Events You're Attending</h2>
+<% attending_events = @user.attended_events.where(date: Date.today..) %>
+<% if attending_events.any? %>
+  <h3>Attending</h3>
+  <%= render "event_list", events: attending_events %>
+<% end %>
 
-<% if @user.attended_events.any? %>
-  <ul>
-    <% @user.attended_events.each do |attended_event| %>
-      <li>
-        <%= link_to attended_event.name, attended_event %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>You aren't attending any events yet.</p>
+<h2>Past Events</h2>
+
+<% hosted_events = @user.created_events.where(date: ...Date.today) %>
+<% if hosted_events.any? %>
+  <h3>Hosted</h3>
+  <%= render "event_list", events: hosted_events %>
+<% end %>
+
+<% attended_events = @user.attended_events.where(date: ...Date.today) %>
+<% if attended_events.any? %>
+  <h3>Attended</h3>
+  <%= render "event_list", events: attended_events %>
 <% end %>
