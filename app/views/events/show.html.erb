@@ -4,6 +4,8 @@
 
 <p><%= @event.date %></p>
 
+<p><%= @event.description %></p>
+
 <%= form_with url: attendances_path do |form| %>
   <%= form.hidden_field :event_id, value: @event.id %>
   <%= form.submit "RSVP" %>
